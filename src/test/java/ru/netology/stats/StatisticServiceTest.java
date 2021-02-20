@@ -14,4 +14,30 @@ class StatisticServiceTest {
         long actual = service.findMax(incomesInBillions);
         assertEquals(expected, actual);
     }
+
+    @Test
+    void waterStatus() {
+        StatisticService service = new StatisticService();
+         String actual = service.waterStatus(30);
+         String expected = "water";
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    void waterIceStatus() {
+        StatisticService service = new StatisticService();
+        String actual = service.waterStatus(-3);
+        String expected = "ice";
+        assertEquals(expected, actual);
+
+    }
+    @Test
+    void waterSteamStatus() {
+        StatisticService service = new StatisticService();
+        String actual = service.waterStatus(120);
+        String expected = "steam";
+        assertEquals(expected, actual);
+
+    }
 }
